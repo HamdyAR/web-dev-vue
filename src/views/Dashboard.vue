@@ -1,10 +1,15 @@
 <template>
-$END$
+<div>
+  <p>A beautiful dashboard page</p>
+  <FetchTodoListTable></FetchTodoListTable>
+</div>
 </template>
 
 <script>
+import FetchTodoListTable from "@/components/Table/todo/FetchTodoListTable";
 export default {
-name: "Dashboard"
+name: "Dashboard",
+  components: {FetchTodoListTable}
 }
 </script>
 

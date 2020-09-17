@@ -6,54 +6,24 @@ const authService = new AuthServices();
 export const namespaced = true;
 
 export const state = {
-  userOptions: {
-    requestId: "",
-    categoryId: "",
-    insuranceCompanyId: "",
-    username: ""
+  userInfo: {
+    email: "boluokunaiya@gmail.com"
   }
 };
 
 export const getters = {
-  getUserOptions: state => {
-    return state.userOptions;
+  getUserInfo: state => {
+    return state.userInfo;
   },
-  getRequestId: state => {
-    return state.userOptions.requestId;
-  },
-  getCategoryId: state => {
-    return state.userOptions.categoryId;
-  },
-  getInsuranceCompanyId: state => {
-    return state.userOptions.insuranceCompanyId;
-  },
-  getUsername: state => {
-    return state.userOptions.username;
+  getUserEmail:  state => {
+    return state.userInfo.email;
   }
 };
 
 export const mutations = {
-  SET_USER_OPTIONS(state, payload) {
-    state.userOptions = payload;
+  SET_USER_INFO(state, payload) {
+    state.userInfo = payload;
   }
 };
 
-export const actions = {
-  login() {
-    let formBody = StoreUtils.rootGetters(
-      StoreUtils.getters.form.GET_FORM_BODY
-    );
-    console.log("formbody => ", formBody);
-    let payload = {
-      userID: formBody.userID,
-      password: formBody.password
-    };
-    let successAction = () => {
-      //save user info in the store
-      StoreUtils
-    };
-    let loaderType = LoaderUtils.types.BLOCKING;
-
-    authService.logIn(payload, successAction, loaderType);
-  }
-};
+export const actions = {};

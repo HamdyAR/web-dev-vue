@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-  import LoginForm from "../components/Forms/auth/LoginForm";
+  import LoginForm from "../../components/Forms/auth/LoginForm";
   export default {
     components: {LoginForm}
   }

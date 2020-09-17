@@ -1,30 +1,38 @@
 <template>
   <div class="app-form">
-    <p class="form-title">Login Form</p>
+    <p class="form-title">Registration Complete Form</p>
     <FormulateForm @submit="submit">
       <FormulateInput
-        name="email"
-        type="email"
-        label="Email*"
+        name="username"
+        type="text"
+        label="username*"
         validation="required"
-        validation-name="Email"
-        placeholder="example@gmail.com"
+        validation-name="Username"
+        placeholder="John"
       />
       <FormulateInput
-          name="firstName"
-          type="text"
-          label="firstName"
+          name="token"
+          type="number"
+          label="token"
           validation="required"
-          validation-name="First name"
-          placeholder="Hamdy"
+          validation-name="token"
+          placeholder="1234"
       />
       <FormulateInput
-          name="lastName"
-          type="text"
-          label="lastName"
+          name="password"
+          type="password"
+          label="password"
           validation="required"
-          validation-name="Last name"
-          placeholder="Tobi"
+          validation-name="password"
+          placeholder="password" />
+
+      <FormulateInput
+          name="password_confirm"
+          type="password"
+          label="password"
+          validation="required|confirm"
+          validation-name="confirm password"
+          placeholder="password"
       />
 
   </div>
@@ -34,7 +42,7 @@
 import StoreUtils from "../../../utils/BaseUtils/StoreUtils";
 
 export default {
-  name: "RegistrationInitForm",
+  name: "RegistrationCompleteForm",
   methods: {
     submit(data) {
       StoreUtils.commit("form/INCREASE_FORM_STAGE_BY_ONE", data);

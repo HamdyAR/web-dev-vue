@@ -1,5 +1,5 @@
 import StoreUtils from "./StoreUtils";
-import router from "../../../router/router";
+import router from "../../router/router";
 
 class ValidatorUtils {
   static changeBaseRouteTo(targetRoute) {
